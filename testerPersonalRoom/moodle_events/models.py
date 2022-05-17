@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
 
 
 class mdl_events(models.Model):
@@ -23,3 +25,9 @@ class mdl_events(models.Model):
     origin = models.CharField('origin', max_length=255, default='')
     ip = models.CharField('ip', max_length=255, default='')
     realuserid = models.BigIntegerField('realuserid', default=0)
+
+
+class userRegistration(UserCreationForm):
+    firstname = forms.CharField(max_length=255)
+    lastname = forms.CharField(max_length=255)
+    email = forms.EmailField(required=True)

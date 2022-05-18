@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    mdl_events.objects.filter(action='created')
+    # mdl_events.objects.filter(action='created')
     # mdl_changes = mdl_events.objects.valies_list('id', 'eventname', 'other', 'courseid', 'timecreated')
     # этот метод предпочтительнее ниже используемого так как мы не вскрываем стороннему пользователю структуру нашей БД.
     # Это определенно надо исправить, нно для тестовый версии подходит и так

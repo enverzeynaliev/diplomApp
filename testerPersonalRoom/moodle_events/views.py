@@ -1,7 +1,6 @@
-from django.http import HttpResponse
-
 from .models import mdl_events
 from django.shortcuts import render
+from django.contrib import auth
 
 
 def index(request):
@@ -10,7 +9,7 @@ def index(request):
     # этот метод предпочтительнее ниже используемого так как мы не вскрываем стороннему пользователю структуру нашей БД.
     # Это определенно надо исправить, нно для тестовый версии подходит и так
     mdl_changes = mdl_events.objects.all()
-    return render(request, 'moodle_events/mdl-events.html', {'mdl_changes': mdl_changes})
+    return render(request, 'moodle_events/mdl-events.html', {'mdl_changes': mdl_changes, 'username': auth.get_user(request).username})
 
 
 # WHERE(`action` = 'created'
@@ -22,7 +21,7 @@ def index(request):
 # `target` = 'course');
 
 def helppage(request):
-    return HttpResponse("<h3>А тут мы сможем почитать, как работать с программой. Ну, а пока тут lorem...</h3>")
+    return render(request, 'moodle_events/help.html')
 
 
 def custom_login(request):

@@ -1,43 +1,55 @@
 {% extends 'moodle_events/base-templates.html' %}
+{% load static %}
 
 {% block title %}
 "Выгрузка изменений"
 {% endblock %}
-
+{% block sidebar %}
+{% endblock %}
 {% block content %}
-<p>НА этой странице будет таблица с выгрузкой изменений в курсах мудл от имени преподавателя. </p>
-<div>
-    <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>Id курса</th>
-                <th>Название события</th>
-                <!--                <th>Название курса</th>-->
-                <th>Событие</th>
-                <!--                <th>Краткое название курса</th>-->
-                <th>Ссылка на курс</th>
-                <th>Дата изменения</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for changes in mdl_changes %}
-            <tr>
-                <th scope="row">{{ changes.courseid }}</th>
-                <td>{{ changes.other }}</td>
-                <!--                <td>{{ changes.other }}</td>-->
-                <!--  тут дважды пустое поле будет так как мудл отказался делиться с нами Json-->
-                <td>{{changes.action}}</td>
-                <!--                <td>{{ changes.other }}</td>-->
-                <td><a href="http://dipmoodle/course/view.php?id={{ changes.courseid }}" target="_blank">Ссылка на курс</a></td>
-                <!-- По хорошему надо бы сделать по человечески ссылку, а пока ока просто как якорь -->
-                <td>{{ changes.timecreated }}</td>
-                <!-- тут у нас перестал работать преобразователь из юникс в нормальный вид,-->
-                <!--     впрочем не очень то и хотелось это исправлять-->
-            </tr>
-            {% endfor %}
-            </tbody>
+<div class="sidebar-content">
+    <div class="content">
+        <div class="div-table">
+            <select class="form-select" aria-label="Default select example" style="wight:100px; margin-bottom:5px;">
+                <option selected="selected">Выберите кафедру</option>
+                <option value="1">ИТиКС</option>
+                <option value="2">ПИН</option>
+                <option value="3">ИС</option>
+            </select>
+            <table class="table table-hover" style="margin-top:30px">
+                <thead style="background-color: #056efd;
+	color: white;">
+                <tr>
+                    <th style="text-align:center">Id курса</th>
+                    <th style="text-align:center">Название события</th>
+                    <!--                <th>Название курса</th>-->
+                    <th style="text-align:center">Событие</th>
+                    <!--                <th>Краткое название курса</th>-->
+                    <th style="text-align:center">Ссылка на курс</th>
+                    <th style="text-align:center">Дата изменения</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for changes in mdl_changes %}
+                <tr style="text-align:center">
+                    <th scope="row">{{ changes.courseid }}</th>
+                    <td style="text-align:center" >{{ changes.other }}</td>
+                    <!--                <td>{{ changes.other }}</td>-->
+                    <!--  тут дважды пустое поле будет так как мудл отказался делиться с нами Json-->
+                    <td style="text-align:center">{{changes.action}}</td>
+                    <!--                <td>{{ changes.other }}</td>-->
+                    <td style="text-align:center"><a href="http://dipmoodle/course/view.php?id={{ changes.courseid }}" target="_blank">Ссылка на
+                        курс</a></td>
 
-        </table>
-   </div>
+                    <td style="text-align:center">{{ changes.timecreated }}</td>
+                    <!-- тут у нас перестал работать преобразователь из юникс в нормальный вид,-->
+                    <!--     впрочем не очень то и хотелось это исправлять-->
+                </tr>
+                {% endfor %}
+                </tbody>
 
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

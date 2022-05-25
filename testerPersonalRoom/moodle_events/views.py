@@ -9,7 +9,8 @@ def index(request):
     # этот метод предпочтительнее ниже используемого так как мы не вскрываем стороннему пользователю структуру нашей БД.
     # Это определенно надо исправить, нно для тестовый версии подходит и так
     mdl_changes = mdl_events.objects.all()
-    return render(request, 'moodle_events/mdl-events.html', {'mdl_changes': mdl_changes, 'username': auth.get_user(request).username})
+    return render(request, 'moodle_events/mdl-events.html',
+                  {'mdl_changes': mdl_changes, 'username': auth.get_user(request).username})
 
 
 # WHERE(`action` = 'created'
@@ -24,5 +25,10 @@ def helppage(request):
     return render(request, 'moodle_events/help.html')
 
 
+def testers(request):
+    args = {'username': auth.get_user(request).username, 'emplname': auth.get_user_model()}
+    return render(request, 'moodle_events/mdl-events.html', args)
+
+
 def custom_login(request):
-    return render(request, 'mooodle_events/custom_login.html')
+    return render(request, 'moodle_events/custom_login.html')

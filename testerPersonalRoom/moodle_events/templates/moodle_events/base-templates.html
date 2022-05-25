@@ -39,20 +39,25 @@
                     <img width="20" height="20" src="{% static 'pictures/google-sheets.png' %}">&nbsp;&nbsp;Google
                     sheets
                 </a>
-
             </li>
             <li>
+                {% if username %}
                 <a href="/logout" class="nav-link link-dark">
-                    <img width="22" height="22" src="{% static 'pictures/logout.png' %}">&nbsp;&nbsp;Выход
-                </a>
+                    <img width="22" height="22" src="{% static 'pictures/logout.png' %}">&nbsp;&nbsp;Выйти
+                    </a></li>
+            <hr>
+            <img width="20" height="20" src="{% static 'pictures/tester.png' %}" >&nbsp;&nbsp;{{username}}
+
+
+            {% else %}
+            <li>
+                <a style="margin-left:20px" href="/sign-in">Войти</a>
+                <img width="20" height="20" src="{% static 'pictures/tester.png' %}">
+
+                <!-- employee он же сотрудник, по сути просто поле списка имен пользователей, для избежания путаницы назван именно employee  -->
             </li>
+            {% endif %}
         </ul>
-        <hr>
-        <div>
-            <p style="margin-left:20px"><img width="20" height="20" src="{% static 'pictures/tester.png' %}">&nbsp;&nbsp;
-                {% for employee in username %} {employee.username}  {% endfor %} </p>
-            <!-- employee он же сотрудник, по сути просто поле списка имен пользователей, для избежания путаницы назван именно employee  -->
-        </div>
 
 
     </div>

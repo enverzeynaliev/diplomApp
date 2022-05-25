@@ -28,6 +28,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+TEMPLATE_DIRS = (
+    'C:/Users/enzey/PycharmProjects/diplom/testerPersonalRoom/loginsys/templates',
+    'C:/Users/enzey/PycharmProjects/diplom/testerPersonalRoom/moodle_events/templates'
+)
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',  # Фреймворк аутентификации и моделей по умолчанию.
@@ -35,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'moodle_events'
-
+    'moodle_events',
+    'loginsys'
 ]
 
 MIDDLEWARE = [

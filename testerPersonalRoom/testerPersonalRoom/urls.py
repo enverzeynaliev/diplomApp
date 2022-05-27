@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('loginsys.urls')),
+    path('adminpanel/', include('adminpanel.urls')),
     path('', include('moodle_events.urls'))
 ]

@@ -1,0 +1,35 @@
+{% extends 'moodle_events/base-templates.html' %}
+{% load static %}
+
+{% block title %}
+"Выгрузка изменений"
+{% endblock %}
+{% block sidebar %}
+{% endblock %}
+{% block content %}
+<div class="sidebar-content">
+    <div class="content">
+        <div class="div-table">
+            <table class="table table-hover" style="margin-top:30px">
+                <thead style="background-color: #056efd;
+	color: white;">
+                <tr>
+                    <th style="text-align:center">Id кафедры</th>
+                    <th style="text-align:center">Название кафедры</th>
+                    <th style="text-align:center">Число курсов в кафедре</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for categories in all_departments %}
+                <tr style="text-align:center">
+                    <th scope="row">{{ categories.id }}</th>
+                    <td style="text-align:center">{{ categories.name }}</td>
+                    <td style="text-align:center">{{categories.coursecount}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

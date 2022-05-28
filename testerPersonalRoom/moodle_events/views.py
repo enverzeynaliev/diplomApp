@@ -28,7 +28,3 @@ def helppage(request):
 def testers(request):
     args = {'username': auth.get_user(request).username, 'emplname': auth.get_user_model()}
     return render(request, 'moodle_events/mdl-events.html', args)
-
-
-def custom_login(request):
-    return render(request, 'moodle_events/custom_login.html')

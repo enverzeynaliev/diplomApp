@@ -9,8 +9,8 @@
 <div class=".d-flex flex-column bd-highlight mb-4">
     <form action="/auth/sign-up" method="post">
         {% csrf_token %}
-        {{ form }}
-
+        {{form.as_ul}}
+    <br>
         <input class="button" type="submit" value="Войти">
     </form>
 </div>

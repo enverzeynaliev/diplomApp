@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Авторизация</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/auth_styles.css' %}" type="text/css">
+    <script type="text/javascript" src="{% static 'scripts/scripts.js' %}"></script>
 </head>
-<body>
-<div class="form-signin">
-    <form action="/auth/sign-in" method="post">
-        {% csrf_token %}
-        <label for="username">Имя пользователя</label>
-        <input type="text" name="username" id="username">
-        <label for="password">Пароль</label>
-        <input type="password" name="password" id="password">
-        {% if login_error %}
-        <label class="error">{{ login_error}}</label>
-        {% endif %}
-        <input class="button" type="submit" value="Войти">
-    </form>
-    <div>
-        <a href="/auth/sign-up">Зарегистрироваться</a>
-    </div>
 
+<body id="login-body">
+<div class="container">
+<div id="signin">
+
+        <form action="/auth/sign-in" method="post">
+            {% csrf_token %}
+            <div class="auth_form">
+                <img src="{% static 'pictures/sevsu.png' %}" >
+                <div>
+                    <p class="par_lkt"><b>Вход в личный кабинет тестировщика</b></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" id="username"
+                           placeholder="Логин или Email пользователя">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Пароль">
+                </div>
+            </div>
+            <div class="checkbox pt-2 ">
+                <label>
+                    <input type="checkbox" style="padding-left: 4px; margin-left: 21px; padding-right: 7px" >&nbsp; Запомнить меня
+                </label>
+            </div>
+            {% if login_error %}
+            <div class="form-group">
+                <label class="error">{{ login_error}}</label>
+            </div>
+            {% endif %}
+            <br>
+            <input  id="btn" class="btn btn-primary" type="submit" value="Войти" style="margin-left: 55px;margin-bottom: 30px">
+
+            <form action="/auth/sign-up" class="container">
+                <input id="btn1" class="btn btn-link" name="register" type="submit" value="Регистрация">
+            </form>
+        </form>
+    </div>
 </div>
 </body>
 </html>

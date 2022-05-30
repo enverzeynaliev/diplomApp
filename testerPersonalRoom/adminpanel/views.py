@@ -44,3 +44,6 @@ def departments_detail(request,departments=None):
     departments = departments.objects.get(id=id)
     print(departments)
     return render(request, 'adminpanel/departments.html', {'departments': departments})
+
+def menu(request):
+    return request('/')

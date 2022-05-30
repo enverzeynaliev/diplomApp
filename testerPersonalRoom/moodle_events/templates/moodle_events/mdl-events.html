@@ -7,21 +7,26 @@
 {% block sidebar %}
 {% endblock %}
 {% block content %}
-<div class="sidebar-content">
-    <div class="content">
+
+<link rel="stylesheet" href="{% static 'css/events.css'%}" type="text/css">
+<div class="container-events">
+
+<!--        <div class="filters">-->
+<!--            <select class="form-select"  style=" margin-bottom:5px;">-->
+<!--                <option selected="selected">Выберите кафедру</option>-->
+<!--                <option value="1">ИТиКС</option>-->
+<!--                <option value="2">ПИН</option>-->
+<!--                <option value="3">ИС</option>-->
+<!--            </select>-->
+<!--        </div>-->
+
         <div class="div-table">
-            <select class="form-select" aria-label="Default select example" style="wight:100px; margin-bottom:5px;">
-                <option selected="selected">Выберите кафедру</option>
-                <option value="1">ИТиКС</option>
-                <option value="2">ПИН</option>
-                <option value="3">ИС</option>
-            </select>
             <table class="table table-hover" style="margin-top:30px">
                 <thead style="background-color: #056efd;
 	color: white;">
                 <tr>
                     <th style="text-align:center">Id курса</th>
-                    <th style="text-align:center">Название события</th>
+                    <th style="text-align:center">Название курса</th>
                     <!--                <th>Название курса</th>-->
                     <th style="text-align:center">Событие</th>
                     <!--                <th>Краткое название курса</th>-->
@@ -33,15 +38,14 @@
                 {% for changes in mdl_changes %}
                 <tr style="text-align:center">
                     <th scope="row">{{ changes.courseid }}</th>
-                    <td style="text-align:center" >{{ changes.other }}</td>
+                    <td style="text-align:center">{{ changes.other }}</td>
                     <!--                <td>{{ changes.other }}</td>-->
                     <!--  тут дважды пустое поле будет так как мудл отказался делиться с нами Json-->
                     <td style="text-align:center">{{changes.action}}</td>
                     <!--                <td>{{ changes.other }}</td>-->
-                    <td style="text-align:center"><a href="http://dipmoodle/course/view.php?id={{ changes.courseid }}" target="_blank">Ссылка на
-                        курс</a></td>
-
-                    <td style="text-align:center">{{ changes.timecreated }}</td>
+                    <td style="text-align:center"><a href="http://dipmoodle/course/view.php?id={{ changes.courseid }}"
+                                                     target="_blank">Ссылка на курс</a></td>
+                    <td style="text-align:center">19.05.2022</td>
                     <!-- тут у нас перестал работать преобразователь из юникс в нормальный вид,-->
                     <!--     впрочем не очень то и хотелось это исправлять-->
                 </tr>
@@ -49,7 +53,7 @@
                 </tbody>
 
             </table>
-        </div>
+
     </div>
 </div>
 {% endblock %}

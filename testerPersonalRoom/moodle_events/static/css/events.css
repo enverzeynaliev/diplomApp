@@ -1,0 +1,55 @@
+.container-events{
+    display: flex;
+    margin-top: 40px;
+    order: 2;
+    margin-left: 40px;
+    background-color: white;
+    margin-right: 40px;
+}
+
+body{
+    overflow: hidden;
+    height: 100%;
+}
+td .hover{
+background-color: grey;
+}
+html{
+	font-family: Comfortaa, monospace;
+	margin-top: 30px;
+	position: relative;
+  min-height: 100%;
+
+}
+table{
+    word-wrap: break-word;
+	table-layout: fixed;
+    width: 450px;
+}
+table td:first-child {
+text-align: center;
+}
+
+th:nth-child(1) {
+  width: 20%;
+}
+th:nth-child(3) {
+  width: 20%;
+}
+
+footer{
+    height: 50px;
+    background: #f7f7f7;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.div-table{
+    border-radius: 4px;
+    box-shadow: 0 0 1px #000;
+}
+
+thead {
+    /*top: 0;*/
+    font-family: Comfortaa, monospace;
+}

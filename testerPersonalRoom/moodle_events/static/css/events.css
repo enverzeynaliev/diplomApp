@@ -5,11 +5,13 @@
     margin-left: 40px;
     background-color: white;
     margin-right: 40px;
+    background-color: aliceblue;
 }
 
 body{
     overflow: hidden;
     height: 100%;
+    background-color: aliceblue;
 }
 td .hover{
 background-color: grey;
@@ -25,6 +27,7 @@ table{
     word-wrap: break-word;
 	table-layout: fixed;
     width: 450px;
+    background-color: white;
 }
 table td:first-child {
 text-align: center;

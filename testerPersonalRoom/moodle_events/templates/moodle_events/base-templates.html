@@ -20,10 +20,13 @@
                 <span class="fs-5" style="text-align: center">Личный кабинет тестировщика</span>
             </a>
             <hr>
+
             <ul class="nav nav-pills flex-column mb-auto">
+
+              {% if username %}
                 <li class="nav-link active">
                     <img style="width: 30px; height:30px; border-radius: 20px; margin-left: 15px "
-                         src="{% static 'pictures/f2.png' %}">&nbsp;&nbsp;{{username}}
+                         src="{% static 'pictures/f2.png' %}">&nbsp;&nbsp;{{username}}&nbsp;{{last_name}}
                 </li>
                 <hr style="margin-bottom: 10px">
                 <li>
@@ -47,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    {% if username %}
+
                     <a href="auth/sign-in" class="nav-link link-dark">
                         <img width="22" height="22" src="{% static 'pictures/logout.png' %}">&nbsp;&nbsp;Выйти
                     </a></li>

@@ -10,9 +10,6 @@ from .forms import UserForm
 
 def login(request):
     args = {}
-    # просто массив ошибок который используется собственно в форме
-    # если юзер ввел некорректное имя(такого юзера нет в бд) то сюда запишется ошибка "Пользователь не найден",
-
     args.update(csrf(request))
     if request.POST:
         username = request.POST.get('username', '')

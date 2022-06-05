@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-Список кафедр
+Курсы в кафедре
 {% endblock %}
 {% block sidebar %}
 {% endblock %}
@@ -18,17 +18,22 @@
                 <thead style="background-color: #056efd;
 	color: white;">
                 <tr>
+                    <th style="text-align:center">Id курса</th>
+                    <th style="text-align:center">Полное имя</th>
+                    <th style="text-align:center">Короткое имя</th>
                     <th style="text-align:center">Id кафедры</th>
-                    <th style="text-align:center">Название кафедры</th>
-                    <th style="text-align:center">Число курсов в кафедре</th>
+                    <th style="text-align:center">Кафедра</th>
+
                 </tr>
                 </thead>
                 <tbody>
-                {% for department in all_departments %}
+                {% for courses_on_category in all_category %}
                 <tr style="text-align:center">
-                    <td style="text-align:center">{{ department.id }}</td>
-                    <td style="text-align:center">{{ department.name }}</td>
-                    <td style="text-align:center">{{department.coursecount}}</td>
+                    <th scope="row">{{ courses_on_category.id }}</th>
+                    <td style="text-align:center">{{ courses_on_category.fullname }}</td>
+                    <td style="text-align:center">{{courses_on_category.shortname}}</td>
+                    <td style="text-align:center">{{courses_on_category.categoryid}}</td>
+                    <td style="text-align:center">{{courses_on_category.categoryname}}</td>
                 </tr>
                 {% endfor %}
                 </tbody>

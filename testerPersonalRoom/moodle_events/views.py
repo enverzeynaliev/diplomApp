@@ -1,4 +1,5 @@
-import json
+
+from django.contrib.auth.models import User
 
 from .models import mdl_events
 from django.shortcuts import render
@@ -25,9 +26,24 @@ def index(request):
 # `target` = 'course');
 
 def helppage(request):
-    return render(request, 'moodle_events/help.html')
+    return render(request, 'moodle_events/help.html', {'username': auth.get_user(request).username})
 
 
-def testers(request):
-    args = {'username': auth.get_user(request).username, 'emplname': auth.get_user_model()}
-    return render(request, 'moodle_events/mdl-events.html', args)
+# def account_view(request):
+#     user = User()
+#     user_id = user.get_username()
+#     items_in_cart = User.objects.filter(username=auth.get_user(request).username)
+#     # если это суперпользователь
+#     if request.user.is_superuser:
+#         template = 'help.html'
+#     # или если это просто пользователь с галочкой персонал
+#     elif request.user.is_staff:
+#         template = 'departments.html'
+#     # или если это пользователь принадлежащий группе manager
+#     elif request.user.groups.filter(name='manager').exists():
+#         template = 'account_role.html'
+#     # иначе все остальные (обычные пользователи)
+#     else:
+#         template = 'account.html'
+
+

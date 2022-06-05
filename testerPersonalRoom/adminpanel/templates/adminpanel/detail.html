@@ -20,7 +20,7 @@
                 <tr>
                     <th style="text-align:center">Id кафедры</th>
                     <th style="text-align:center">Название кафедры</th>
-                    <th style="text-align:center">Число курсов в кафедре</th>
+<!--                    <th style="text-align:center">Число курсов в кафедре</th>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -28,7 +28,7 @@
                 <tr style="text-align:center">
                     <td style="text-align:center">{{ department.id }}</td>
                     <td style="text-align:center">{{ department.name }}</td>
-                    <td style="text-align:center">{{department.coursecount}}</td>
+<!--                    <td style="text-align:center">{{department.coursecount}}</td>-->
                 </tr>
                 {% endfor %}
                 </tbody>
@@ -36,4 +36,6 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block footer%}
 {% endblock %}

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
 </head>
 <body class="sidebar-content">
+
 <div class="container-events">
     <div class="sidebar">
         <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-2">
@@ -39,6 +40,20 @@
                        href="/help"
                        class="nav-link link-dark">
                         <img width="20" height="20" src="{% static 'pictures/manual.png' %}">&nbsp;&nbsp;Инструкция
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank"
+                       href="departments"
+                       class="nav-link link-dark">
+                        <img width="20" height="20" src="{% static 'pictures/manual.png' %}">&nbsp;&nbsp;Кафедры
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank"
+                       href="category"
+                       class="nav-link link-dark">
+                        <img width="20" height="20" src="{% static 'pictures/manual.png' %}">&nbsp;&nbsp;Курсы в категории
                     </a>
                 </li>
                 <li>
@@ -73,10 +88,10 @@
 {% block content %}{% endblock %}
 
 
-<footer>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022&nbsp;&nbsp;<a href="https://sevsu.ru:">Cевастопольский государственный университет</a></span>
+<!--<footer>-->
+<!--            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022&nbsp;&nbsp;<a href="https://sevsu.ru:">Cевастопольский государственный университет</a></span>-->
 
-</footer>
+<!--</footer>-->
 
 </body>
 </html>

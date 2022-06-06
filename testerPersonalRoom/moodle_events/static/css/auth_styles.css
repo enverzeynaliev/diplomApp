@@ -1,5 +1,5 @@
 html {
-    font-family: Comfortaa, monospace;
+    font-family: Arial, monospace;
 }
 
 #login-body {
@@ -37,12 +37,12 @@ html {
 
 .par_lkt {
     padding-top: 5px;
-    font-family: Comfortaa, monospace;
+    font-family: Arial, monospace;
     text-align: center;
     text-decoration: black;
     padding-right: 20px;
     padding-left: 20px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .form-control {
@@ -54,7 +54,7 @@ html {
 }
 
 .checkbox {
-    font-family: Comfortaa, monospace;
+    font-family: Arial, monospace;
 }
 
 .auth_form {
@@ -63,14 +63,14 @@ html {
 
 #btn, #btn1 {
     font-size: 16px;
-    font-family: Comfortaa, monospace;
+    font-family: Arial, monospace;
     padding: 10px 45px;
     margin-bottom: 20px;
     margin-left: 10px;
 }
 
 input {
-    font-family: Comfortaa, monospace;
+    font-family: Arial, monospace;
 }
 
 img {

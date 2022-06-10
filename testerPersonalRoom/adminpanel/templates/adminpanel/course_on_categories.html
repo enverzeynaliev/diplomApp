@@ -8,62 +8,43 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="{% static 'css/course_on_category.css'%}" type="text/css">
-
-
-<div class="sidebar-content">
+<link rel="stylesheet" href="{% static 'css/course_category.css'%}" type="text/css">
 <div class="content">
-    <form method="GET">
-        <input type="text" name="categoryname" placeholder="Поиск" class="text-center">
-        <button type="submit" class="btn-danger btn-sm">Найти кафедры</button>
-    </form>
     <div class="div-table">
-        <table class="table table-hover" style="margin-top:30px">
-            <thead style="background-color: #056efd;
-	color: white;">
+        <div class="filter">
+            <form method="GET" id="search">
+                <input type="text" name="categoryname" placeholder="Поиск" class="text-center">
+                <button type="submit" >Показать&nbsp;кафедру</button>
+            </form>
+        </div>
+        <table class="table table-hover">
+            <thead>
             <tr>
-                <th style="text-align:center">Id курса</th>
-                <th style="text-align:center">Полное имя</th>
-                <th style="text-align:center">Короткое имя</th>
-                <th style="text-align:center">Id кафедры</th>
-                <th style="text-align:center">Кафедра</th>
-
+                <th>Id</th>
+                <th>Полное имя</th>
+                <th>Короткое имя</th>
+                <th>Id курса</th>
+                <th>Кафедра</th>
+                <th style="text-align:center">Ссылка на курс</th>
             </tr>
             </thead>
             <tbody>
             {% for courses_on_category in all_category %}
             <tr style="text-align:center">
-                <th scope="row">{{ courses_on_category.id }}</th>
+                <td style="text-align:center">{{courses_on_category.categoryid}}</td>
                 <td style="text-align:center">{{ courses_on_category.fullname }}</td>
                 <td style="text-align:center">{{courses_on_category.shortname}}</td>
-                <td style="text-align:center">{{courses_on_category.categoryid}}</td>
+                <th scope="row">{{ courses_on_category.id }}</th>
                 <td style="text-align:center">{{courses_on_category.categoryname}}</td>
+                <td><a href="https://do.sevsu.ru/course/view.php?id={{courses_on_category.id}}"
+                       target="_blank">Ссылка</a> <img width="15" height="15" style="opacity: .4;"
+                                                       src="{% static 'pictures/link.png' %}">
+                </td>
             </tr>
-
             {% endfor %}
             </tbody>
-
         </table>
-        <nav aria-label="Page navigation example">
-            <ul style="" class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number }}">Пред</a>
-                </li>
-                {% endif %}
-                {% for page in page_obj.paginator.page_range %}
-                {% if page == page_obj.number %}
-                <li class="page-item active"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
-                {% elif page > page_obj.number|add:-3 and page < page_obj.number|add:3 %}
-                <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
-                {% endif %}
-                {% endfor %}
-                {% if page_obj.has_next %}
-                <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">След</a></li>
-                {% endif %}
-
-            </ul>
-        </nav>
     </div>
 </div>
-</div>
+
 {% endblock %}

@@ -1,0 +1,48 @@
+pre{
+    display: flex;
+    font-family: "Comfortaa", serif;
+    order: 2;
+    font-size: 14px;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    order: 2;
+    /*margin-left: 20px;*/
+    background-color: white;
+    margin-right: 40px;
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px  #F4F7FA solid;
+    border-radius: 20px;
+}
+
+body{
+    background-color: #F4F7FA;
+}
+
+footer  {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 8px;
+    }
+
+span a{
+    font-size: medium;
+}
+span{
+    font-size: medium;
+}
+
+.container-events {
+    display: flex;
+    margin-top: 40px;
+    order: 1;
+    margin-left: 40px;
+    background-color: white;
+    border: #F4F7FA solid;
+    border-radius: 20px;
+}

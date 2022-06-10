@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-jk2l99i1gnhgrt+_^s-agn+9p8(!#wq0c)sepyxt=t9u)3mef4
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 # Application definition
 
 TEMPLATE_DIRS = (

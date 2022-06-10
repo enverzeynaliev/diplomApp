@@ -1,79 +1,146 @@
-.content{
+.container-events {
     display: flex;
     margin-top: 40px;
-    order: 2;
+    order: 1;
     margin-left: 40px;
     background-color: white;
     margin-right: 40px;
-
+    border: #F4F7FA solid;
+    border-radius: 20px;
 }
 
-body{
+body {
     overflow: hidden;
     height: 100%;
-    background-color: #f5f5f5;
-
+    background-color: #F4F7FA;
 }
-td .hover{
+
+td .hover {
     background-color: grey;
 }
-html{
+
+html {
     font-family: Arial, monospace;
     margin-top: 30px;
     position: relative;
     min-height: 100%;
-
 }
-table{
+
+table {
     word-wrap: break-word;
     table-layout: fixed;
     width: 400px;
     background-color: white;
 }
+
 table td:first-child {
     text-align: right;
 }
 
 th:nth-child(1) {
-    width: 8%;
+    width: 85px;
 }
+
+th:nth-child(2) {
+    width: 180px;
+}
+
 th:nth-child(3) {
-    width: 8%;
+    width: 180px;
 }
 
-footer{
-    height: 50px;
+th:nth-child(4) {
+    width: 85px;
+}
 
+th:nth-child(5) {
+    width: 150px;
+}
+
+th:nth-child(6) {
+    width: 100px;
+}
+
+th {
+    text-align: center;
+}
+
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
 }
-.div-table{
-    border-radius: 4px;
+
+.div-table {
+    border-radius: 10px;
     box-shadow: 0 0 1px #000;
-    margin-top: 10px;
 }
 
 thead {
-    /*top: 0;*/
+    border: #F4F7FA solid;
+    border-radius: 35px;
     font-family: Arial, monospace;
-}
-
-#search{
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-}
-
-button{
     background-color: #056efd;
-    border: #9cb8e3 solid;
-    border-radius: 5px;
+    color: white;
+    height: 55px;
 }
 
 .filter{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
 
+input {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    text-align: center;
+    border: #E7E7E7E7;
+    background-color: #F0F5FC;
+    border-radius: 10px;
+}
+
+button {
+    width: auto;
+    height: 45px;
+    text-align: center;
+    border: #F0F5FC;
+    border-radius: 10px;
+    background-color: #056efd;
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#br_table {
+    background-color: #F4F7FA;
+}
+
+#search {
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+}
+
+tbody {
+    font-size: small;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#sidebar {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+span{
+    color: black;
 }

@@ -1,20 +1,20 @@
-
-from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 
 from .models import mdl_events
 from django.shortcuts import render
 from django.contrib import auth
 
 
-def index(request):
+def index(request, pagenum=1):
     # mdl_events.objects.filter(action='created')
     mdl_changes = mdl_events.objects.all()
     # mdl_changes = mdl_events.objects.valies_list('id', 'eventname', 'other', 'courseid', 'timecreated')
     # этот метод предпочтительнее ниже используемого так как мы не вскрываем стороннему пользователю структуру нашей БД.
     # Это определенно надо исправить, нно для тестовый версии подходит и так
-
+    # currentpage=Paginator(mdl_changes, 3)
     return render(request, 'moodle_events/mdl-events.html',
-                  {'mdl_changes': mdl_changes, 'username': auth.get_user(request).username})
+                  {'mdl_changes': mdl_changes , 'username': auth.get_user(request).username})
+
 
 
 # WHERE(`action` = 'created'

@@ -65,8 +65,8 @@ def get_courses_on_categories(request):
             categoryname=i['categoryname']
         )
         category_data.save()
-        # all_categories = course_on_categories.objects.filter(categoryname__contains=request.GET['categoryname'])
-        all_category = course_on_categories.objects.filter(categoryid=1)
+        # all_categories = course_on_categories.objects.filter(categoryid=request.GET['categoryid'])
+        all_category = course_on_categories.objects.filter(categoryid=67)
 
     return render(request, 'adminpanel/course_on_categories.html',
                   {"all_category": all_category, 'username': auth.get_user(request).username})

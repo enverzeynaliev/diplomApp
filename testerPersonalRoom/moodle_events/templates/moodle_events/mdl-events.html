@@ -4,6 +4,7 @@
 {% block title %}
 Главная
 {% endblock %}
+<link rel="shortcut icon" type="image/png" href="{% static 'pictures/favicon.ico' %}">
 {% block sidebar %}
 {% endblock %}
 {% block content %}
@@ -12,14 +13,14 @@
 <div class="container-events">
     <div class="tablefilter">
         <div id=roleDmitriev class="filters">
-            <select>
-                <option selected="selected">Выберите кафедру</option>
-                <option value="1">ИТиКС</option>
-                <option value="2">ПИН</option>
-                <option value="3">ИС</option>
+            <select class="px-2">
+                <option selected="selected" class="px-2">Выберите кафедру</option>
+                <option value="1" class="px-2">ИТиКС</option>
+                <option value="2" class="px-2">ПИН</option>
+                <option value="3" class="px-2">ИС</option>
             </select>
-            <input type="date" id="date" name="date" placeholder="от">
-            <input type="date" id="date1" name="date" placeholder="до">
+            <input type="date" id="date" name="date" placeholder="от" class="px-2">
+            <input type="date" id="date1" name="date" placeholder="до" class="px-2">
             <button id="filters">Показать</button>
         </div>
 

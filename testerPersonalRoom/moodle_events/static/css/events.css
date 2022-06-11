@@ -64,6 +64,8 @@ footer {
 .div-table {
     border-radius: 5px;
     box-shadow: 0 0 1px #000;
+    margin-right: 2px;
+    margin-left: 3px;
 }
 
 thead {

@@ -24,8 +24,12 @@ SECRET_KEY = 'django-insecure-jk2l99i1gnhgrt+_^s-agn+9p8(!#wq0c)sepyxt=t9u)3mef4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 # Application definition
+
+CSRF_TRUSTED_ORIGINS = ["https://*.ngrok.io"]
 
 TEMPLATE_DIRS = (
     'C:/Users/enzey/PycharmProjects/diplom/testerPersonalRoom/loginsys/templates',
@@ -50,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',  # Управление сессиями между запросами
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     # Связывает пользователей, использующих сессии, запросами.
     'django.contrib.messages.middleware.MessageMiddleware',
